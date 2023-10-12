@@ -25,4 +25,6 @@ secondary name node，name node，client，data node这四部分组成了hdfs的
 ### 文件读取和写入
 + 首先调用Open生成df(distributed filesystem)实例
 + df实例通过RPC获取第一批文件文件的block的location
-+ 
++ 前面返回一个FSDataInputStream对象，，连接datanode，调用read方法
++ 如果第一个block块数据读完，关闭指向第一个block的连接，接着读取下一个
++ 如果第一个dataNode中数据块读完了，FSInputStream获取下一个block的location
