@@ -1,2 +1,2 @@
 # distributed_notes
-it reords my notes to study distributed system
+It reords my notes to study distributed system
