@@ -73,4 +73,11 @@ master/save.NameNode是hdfs的主节点，DataNode是hdfs的从节点，两种�
 + 分块存储：里面的数据是一个个block。默认大小是128M。不足128M就是一块。快的大小可以通过改变hdfs-default.xml中：dfs.blocksize改变
 + 副本机制：block和block自己有冗余。每个block都会有副本，默认三个副本1+2,本身的那份也算进去了
 + 元数据记录：元数据是记录数据的数据，也叫解释性数据。文件自身属性信息：文件名称，权限，修改时间，文件大小，数据块大小。文件块位置映射信息：记录文件块和DataNode之间的映射信息，即那个块位于哪个节点上
-+ 抽象统一的目录树结构
++ 抽象统一的目录树结构：namespace，命名空间
++ 数据块存储：block的具体存储管理由DataNode承担
+
+## hdfs的shell操作
+cli（command line interface）命令行界面
+hadoop fs -ls file:///#操作本地文件系统  
+hadoop fs -ls hdfs://node1:8020/#操作hdfs文件系统  
+hadoop fs -ls / #默认访问fs.defaultFS默认的文件系统
